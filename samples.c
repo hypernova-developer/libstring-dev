@@ -1,15 +1,8 @@
 #include "string.h"
 #include <stdio.h>
 
-/**
- * @file samples.c
- * @brief Demonstration of the libstring-dev and libvector-dev ecosystem.
- * @author hypernova-developer
- */
-
 int main()
 {
-    /* 1. Dynamic String Operations */
     String greeting;
     string_init(&greeting);
 
@@ -21,10 +14,8 @@ int main()
     printf("Size:     %zu characters\n", greeting.size);
     printf("Capacity: %zu bytes\n\n", greeting.capacity);
 
-    /* 2. Direct Vector Operations (The Engine) */
     printf("--- Integer Vector Test ---\n");
     
-    /* We can still use libvector-dev independently */
     VECTOR_TYPE(int)
     Vector_int scores;
     vector_init_int(&scores);
@@ -39,13 +30,11 @@ int main()
         printf("Score [%zu]: %d\n", i, scores.data[i]);
     }
 
-    /* 3. Safety & Capacity Demonstration */
     string_append(&greeting, " Powered by hypernova-developer.");
     printf("\n--- Final String Result ---\n");
     printf("%s\n", greeting.data);
     printf("Final Capacity: %zu\n", greeting.capacity);
 
-    /* Clean up all dynamic resources */
     string_free(&greeting);
     vector_free_int(&scores);
 
