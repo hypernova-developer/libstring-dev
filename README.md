@@ -16,3 +16,6 @@ C-style strings (`char*`) are dangerous and hard to manage. **libstring-dev** le
 ## 📦 Requirements
 
 - This library requires `Vector.h` from **libvector-dev** also developed by me, hypernova-developer to be present in the include path. 
+
+## Completed
+**libstring-dev** project is completed. 18/05/2026 23:11
